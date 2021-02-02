@@ -1,5 +1,54 @@
 # Change Log
 
+## 1.6.0
+
+### Minor Changes
+
+- [`408aaaace`](https://github.com/chakra-ui/chakra-ui/commit/408aaaace0dd413b61354958a4c30b9f2f8aa376)
+  [#3227](https://github.com/chakra-ui/chakra-ui/pull/3227) Thanks
+  [@TimKolberger](https://github.com/TimKolberger)! - Introducing a generic
+  TypeScript type `ChakraTheme` to improve the `extendTheme` function even
+  further.
+
+  ```ts
+  import { extendTheme } from "@chakra-ui/react"
+
+  export const customTheme = extendTheme({
+    // here you get autocomplete for
+    //   - existing definitions from the default theme
+    //   - new components (Single and MultiStyle)
+    //   - CSS definitions
+    //   - color hues
+    //   - etc.
+  })
+
+  export type MyCustomTheme = typeof customTheme
+  ```
+
+  You can get typesafe access to your custom theme like this:
+
+  ```ts
+  import { useTheme } from "@chakra-ui/react"
+  import { MyCustomTheme } from "./my-custom-theme"
+
+  const MyComponent = () => {
+    const customTheme = useTheme<MyCustomTheme>()
+    //...
+  }
+  ```
+
+### Patch Changes
+
+- [`2861b613b`](https://github.com/chakra-ui/chakra-ui/commit/2861b613bf354e6d00de01bf12bb543b2f2c2532)
+  [#3251](https://github.com/chakra-ui/chakra-ui/pull/3251) Thanks
+  [@dodas](https://github.com/dodas)! - Fixed an issue in Firefox where `Input`
+  overflows it's flex container.
+
+- Updated dependencies
+  [[`ff4a36bca`](https://github.com/chakra-ui/chakra-ui/commit/ff4a36bca11cc177830f6f1da13700acd1e3a087)]:
+  - @chakra-ui/utils@1.1.1
+  - @chakra-ui/theme-tools@1.0.4
+
 ## 1.5.0
 
 ### Minor Changes

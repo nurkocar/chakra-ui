@@ -1,5 +1,18 @@
 # Change Log
 
+## 1.1.1
+
+### Patch Changes
+
+- [`ff4a36bca`](https://github.com/chakra-ui/chakra-ui/commit/ff4a36bca11cc177830f6f1da13700acd1e3a087)
+  [#3245](https://github.com/chakra-ui/chakra-ui/pull/3245) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - Removed `objectAssign`
+  function in favor of using native `Object.assign` method. It is
+  [now supported in most browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#browser_compatibility)
+
+  This function is only used once in the `system` package as well. This PR
+  simply removes it to cut bundle size of utils. Less is more 😃.
+
 ## 1.1.0
 
 ### Minor Changes
